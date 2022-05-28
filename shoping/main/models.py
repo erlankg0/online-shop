@@ -33,7 +33,7 @@ class Brand(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("Brand", kwargs={"pk": self.pk})
+        return reverse("Brand", kwargs={"slug": self.slug})
     
 
 class Color(models.Model):
@@ -50,7 +50,7 @@ class Color(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("Color", kwargs={"pk": self.pk})
+        return reverse("Color", kwargs={"slug": self.slug})
     
 
 class Specifications(models.Model):
@@ -96,4 +96,4 @@ class Product(models.Model):
         return f'{self.name} {self.brand}'
 
     def get_absolute_url(self):
-        return reverse("Product detail", kwargs={"pk": self.pk})
+        return reverse("Product detail", kwargs={"slug": self.slug})
